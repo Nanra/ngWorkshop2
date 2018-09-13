@@ -1,3 +1,25 @@
-<p>
-  friend-list works!
-</p>
+<h4>My Friends</h4>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Contact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let friend of myFriends; let i = index" >
+            <th scope="row"> {{( 1 + i )}} </th>
+            <td> {{ friend.name }} </td>
+            <td>{{ friend.email }}</td>
+            <td>{{ friend.contact }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

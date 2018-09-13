@@ -1,5 +1,6 @@
 import { Friend } from './../friend.model';
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef,
+  EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-add-friend',
@@ -12,6 +13,8 @@ export class AddFriendComponent implements OnInit {
   inputInfo: Friend = new Friend ('', '', '');
   @ViewChild('inputContact') inputContact: ElementRef;
 
+  @Output() friendAdded = new EventEmitter<Friend>();
+
   constructor() { }
 
   onAddFriend(inputEmail: HTMLInputElement) {
@@ -19,6 +22,11 @@ export class AddFriendComponent implements OnInit {
     console.log(this.inputInfo);
     console.log('Email : ' + inputEmail.value);
     console.log('Contact : ' + (this.inputContact.nativeElement.value));
+    this.friendAdded.emit(new Friend(
+      this.inputInfo.name,
+      inputEmail.value,
+      this.inputContact.nativeElement.value
+    ));
   }
 
   ngOnInit() {

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Friend } from './../friend.model';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-friend-list',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./friend-list.component.css']
 })
 export class FriendListComponent implements OnInit {
+
+  // Var Array penampung nilai array dari Object Friend
+  @Input() myFriends: Friend [];
 
   constructor() { }
 
