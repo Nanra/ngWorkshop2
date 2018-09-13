@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class AddFriendComponent implements OnInit {
 
   // Variabel objek baru inherence dari class Friend yang dari modul friend.modul.ts
-  inputInfor: Friend = new Friend ('', '', '');
+  inputInfo: Friend = new Friend ('', '', '');
 
   constructor() { }
 
