@@ -13,6 +13,11 @@ export class AddFriendComponent implements OnInit {
 
   constructor() { }
 
+  onAddFriend() {
+    console.log('Add Friend');
+    console.log(this.inputInfo);
+  }
+
   ngOnInit() {
   }
 
