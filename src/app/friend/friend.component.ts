@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class FriendComponent implements OnInit {
 
   friendList: Friend [] = [
-    new Friend('Sumarsono', 'sumar@email.com', '827839')
+    new Friend('Sumarsono', 'sumar@email.com', 'Cirebon', '827839')
   ];
 
   constructor() { }

@@ -10,8 +10,9 @@ import { Component, OnInit, ViewChild, ElementRef,
 export class AddFriendComponent implements OnInit {
 
   // Variabel objek baru inherence dari class Friend yang dari modul friend.modul.ts
-  inputInfo: Friend = new Friend ('', '', '');
+  inputInfo: Friend = new Friend ('', '', '', '');
   @ViewChild('inputContact') inputContact: ElementRef;
+  @ViewChild('inputAddress') inputAddress: ElementRef;
 
   @Output() friendAdded = new EventEmitter<Friend>();
 
@@ -25,6 +26,7 @@ export class AddFriendComponent implements OnInit {
     this.friendAdded.emit(new Friend(
       this.inputInfo.name,
       inputEmail.value,
+      this.inputAddress.nativeElement.value,
       this.inputContact.nativeElement.value
     ));
   }

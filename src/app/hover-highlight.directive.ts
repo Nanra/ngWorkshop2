@@ -27,7 +27,7 @@ export class HoverHighlightDirective {
 
   @HostListener('mouseleave') mouseExit(eventData: Event) {
     this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'transparent');
-    this.textColor = 'red';
+    this.textColor = 'blue';
     this.textFont = 'normal';
   }
 
