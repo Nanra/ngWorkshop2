@@ -1,6 +1,6 @@
 import { Friend } from './../friend.model';
-import { Component, OnInit, ViewChild, ElementRef,
-  EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FriendsService } from '../friends.service';
 
 @Component({
   selector: 'app-add-friend',
@@ -11,25 +11,21 @@ export class AddFriendComponent implements OnInit {
 
   // Variabel objek baru inherence dari class Friend yang dari modul friend.modul.ts
   inputInfo: Friend = new Friend ('', '', '', '');
-  @ViewChild('inputContact') inputContact: ElementRef;
-  @ViewChild('inputAddress') inputAddress: ElementRef;
 
-  @Output() friendAdded = new EventEmitter<Friend>();
+  constructor( private friendService: FriendsService ) { }
 
-  constructor() { }
+  onAddFriend( inputName: HTMLInputElement,
+               inputEmail: HTMLInputElement,
+               inputAddress: HTMLInputElement,
+               inputContact: HTMLInputElement ) {
 
-  onAddFriend(inputEmail: HTMLInputElement) {
-    console.log('Add Friend');
-    console.log(this.inputInfo);
-    console.log('Email : ' + inputEmail.value);
-    console.log('Contact : ' + (this.inputContact.nativeElement.value));
-    this.friendAdded.emit(new Friend(
-      this.inputInfo.name,
-      inputEmail.value,
-      this.inputAddress.nativeElement.value,
-      this.inputContact.nativeElement.value
-    ));
-  }
+                this.friendService.addFriend(new Friend(
+                  inputName.value,
+                  inputEmail.value,
+                  inputAddress.value,
+                  inputContact.value
+                ));
+              }
 
   ngOnInit() {
   }

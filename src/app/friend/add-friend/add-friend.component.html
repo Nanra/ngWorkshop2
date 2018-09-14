@@ -5,7 +5,7 @@
       <div class="form-group row">
         <label for="inputName" class="col-sm-3 form-control-label">Name</label>
         <div class="col-sm-9">
-            <input type="text" class="form-control" id="inputName" [(ngModel)]= "inputInfo.name" >
+            <input type="text" class="form-control" id="inputName" #inputName >
             <!-- {{ inputInfo.name }} -->
           </div>
         </div>
@@ -31,7 +31,7 @@
             <!-- {{ inputContact }} -->
           </div>
         </div>
-        <button type="Add" class="btn btn-success" (click)="onAddFriend(inputEmail)">Add Friend</button>
+        <button type="Add" class="btn btn-success" (click)="onAddFriend(inputName, inputEmail, inputAddress, inputContact)">Add Friend</button>
       </div>
     </div>
   </div>
