@@ -6,7 +6,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 })
 export class FriendsService {
   friendAdded = new EventEmitter<void>();
-  
+
   private friendList: Friend[] = [
     new Friend('Alfath Rajaya', 'alfath@email.com', 'Medan', '087265342')
   ];

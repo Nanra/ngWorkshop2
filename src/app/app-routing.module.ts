@@ -21,7 +21,7 @@ const appRoute: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forRoot(appRoute) // Memanggil var Array tadi
+    RouterModule.forRoot(appRoute) // Memanggil var Array routing
   ],
   exports: [
     RouterModule
