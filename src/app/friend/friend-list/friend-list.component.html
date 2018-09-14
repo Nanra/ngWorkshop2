@@ -2,6 +2,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
+      Search : <input type="text" [(ngModel)]="searchStr">
       <table class="table">
         <thead>
           <tr>
@@ -13,11 +14,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let friend of myFriends; let i = index"
+          <tr *ngFor="let friend of myFriends | find: 'name':searchStr; let i = index"
           [appHoverHighlight] = "{ background:'aqua', text:'black' }" >
             <th scope="row"> {{( 1 + i )}} </th>
-            <td> {{ friend.name }} </td>
-            <td>{{ friend.email }}</td>
+            <td> {{ friend.name | uppercase }} </td>
+            <td>{{ friend.email | lowercase }}</td>
             <td>{{ friend.address }}</td>
             <td>{{ friend.contact }}</td>
           </tr>

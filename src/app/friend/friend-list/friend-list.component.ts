@@ -8,6 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class FriendListComponent implements OnInit {
 
+  searchStr = '';
+
   // Var Array penampung nilai array dari Object Friend
   @Input() myFriends: Friend [];
 

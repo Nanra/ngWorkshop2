@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { FindPipe } from './find.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AppRoutingModule } from './/app-routing.module';
     HeaderComponent,
     HomeComponent,
     ContactUsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    FindPipe
   ],
   imports: [
     BrowserModule,
