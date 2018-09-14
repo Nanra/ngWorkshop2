@@ -42,7 +42,8 @@
               <span *ngIf="contactForm.get('usermessage').errors['required']">This field is required!</span>
           </span>
         </div>
-        <button [disabled]="!contactForm.valid" class="btn btn-primary" type="submit">Submit</button>
+        <button [disabled]="!contactForm.valid" class="btn btn-primary" type="submit">
+          <i class="fa fa-send"></i> Submit</button>
       </form>
       <hr>
     </div>
