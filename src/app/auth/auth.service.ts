@@ -12,7 +12,8 @@ export class AuthService {
   login(username: string, password: string) {
     this.loggedIn = (username === 'ABC' && password === '1234');
     console.log(this.loggedIn);
-    if (this.loggedIn) { this.router.navigate(['/friend']); }
+    if (this.loggedIn) {
+      this.router.navigate(['/friend']); }
   } // End of login method
 
   logout() {

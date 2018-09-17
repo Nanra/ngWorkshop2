@@ -14,6 +14,6 @@ export class HomeComponent implements OnInit {
   }
 
   onLogin(username: HTMLInputElement, password: HTMLInputElement) {
-    this.authService.login(username.value, username.value);
+    this.authService.login(username.value, password.value);
   }
 }
