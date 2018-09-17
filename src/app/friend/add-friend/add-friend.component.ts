@@ -28,6 +28,7 @@ export class AddFriendComponent implements OnInit {
               }
 
   ngOnInit() {
+    // this.friendService.addFriend(null).subs
   }
 
 }

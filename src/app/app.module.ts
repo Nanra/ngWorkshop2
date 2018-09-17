@@ -17,6 +17,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { FindPipe } from './find.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -37,7 +38,7 @@ import { ToastrModule } from 'ngx-toastr';
     FormsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    CommonModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot()
   ],
