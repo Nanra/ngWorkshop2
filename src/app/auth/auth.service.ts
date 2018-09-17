@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -6,14 +7,32 @@ import { Router } from '@angular/router';
 export class AuthService {
 
   loggedIn = false;
+  nama = 'Nanra';
+  pass = 'nanra1234';
 
-  constructor( private router: Router ) { }
+  constructor( private router: Router, private toast: ToastrService ) { }
 
   login(username: string, password: string) {
-    this.loggedIn = (username === 'ABC' && password === '1234');
-    console.log(this.loggedIn);
+    this.loggedIn = (username === this.nama && password === this.pass);
+    console.log('Status Login: ' + this.loggedIn);
     if (this.loggedIn) {
-      this.router.navigate(['/friend']); }
+      this.router.navigate(['/friend']);
+      this.toast.success(`Selamat Datang ${username}`, 'Success', {
+        positionClass: 'toast-top-right'
+      });
+      console.log(`User ${username} Logged In`);
+    }
+    if (username === this.nama && password !== this.pass ) {
+      console.log('Password tidak cocok');
+      this.toast.error('Password tidak cocok', 'Login Gagal', {
+        positionClass: 'toast-top-center'
+      });
+    } if (username !== this.nama && password !== this.pass) {
+      this.toast.error(`User ${username} tidak ditemukan`, 'Login Gagal', {
+        positionClass: 'toast-top-center'
+      });
+      console.log(`User ${username} tidak ditemukan`);
+    }
   } // End of login method
 
   logout() {
