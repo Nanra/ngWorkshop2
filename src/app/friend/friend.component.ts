@@ -15,11 +15,20 @@ export class FriendComponent implements OnInit {
   constructor(private friendService: FriendsService) { }
 
   ngOnInit() {
-    this.friendList = this.friendService.getFriends();
-
-    this.friendService.friendAdded.subscribe(() => {
-      this.friendList = this.friendService.getFriends();
+    console.log('Get Friendlist');
+    // this.friendList = this.friendService.getFriends();
+    this.friendService.loadFriends().subscribe((result: any) => {
+      console.log(result);
+      this.friendList = result.body;
+    },
+    error => {
+      console.log('Eroorr Gan');
+      console.log(error);
     });
+
+    // this.friendService.friendAdded.subscribe(() => {
+    //   this.friendList = this.friendService.getFriends();
+    // });
   }
 
   onFriendAdded(newFriendInfo) {

@@ -27,6 +27,12 @@ export class AddFriendComponent implements OnInit {
                 ));
               }
 
+  // testKangJen() {
+  //   this.friendService.addFriend(null).subscribe((response: any) => {
+  //     console.log(response);
+  //   });
+  // }
+
   ngOnInit() {
   }
 

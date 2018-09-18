@@ -8,7 +8,7 @@ export class AuthService {
 
   loggedIn = false;
   nama = 'Nanra';
-  pass = 'nanra1234';
+  pass = '1234';
 
   constructor( private router: Router, private toast: ToastrService ) { }
 
@@ -20,7 +20,7 @@ export class AuthService {
       this.toast.success(`Selamat Datang ${username}`, 'Success', {
         positionClass: 'toast-top-right'
       });
-      console.log(`User ${username} Logged In`);
+      console.log(`Username ${username} Logged In`);
     }
     if (username === this.nama && password !== this.pass ) {
       console.log('Password tidak cocok');
@@ -28,6 +28,11 @@ export class AuthService {
         positionClass: 'toast-top-center'
       });
     } if (username !== this.nama && password !== this.pass) {
+      this.toast.error(`User ${username} tidak ditemukan`, 'Login Gagal', {
+        positionClass: 'toast-top-center'
+      });
+      console.log(`User ${username} tidak ditemukan`);
+    } if (username !== this.nama && password === this.pass) {
       this.toast.error(`User ${username} tidak ditemukan`, 'Login Gagal', {
         positionClass: 'toast-top-center'
       });
