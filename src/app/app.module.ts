@@ -18,8 +18,14 @@ import { HomeComponent } from './home/home.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FindPipe } from './find.pipe';
+<<<<<<< HEAD
 
 
+=======
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { HttpClientModule } from '@angular/common/http';
+>>>>>>> 81f3382d923a72cd59311e4df70cb2cd40a498d8
 
 
 @NgModule({
@@ -40,7 +46,7 @@ import { FindPipe } from './find.pipe';
     FormsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    CommonModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     HttpClientModule
